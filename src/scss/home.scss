@@ -214,3 +214,68 @@
 }
 
 //========================================================================================================================================================
+
+.servise {
+  @include adaptiveValue("padding-top", 80, 35);
+  @include adaptiveValue("padding-bottom", 80, 35);
+
+  &_reverse {
+    background-color: #57899f;
+  }
+  &__container {
+  }
+
+  &__body {
+    display: flex;
+    @include adaptiveValue("column-gap", 75, 15, 0, 1210, 767);
+    row-gap: toRem(25);
+
+    @media (max-width: $mobile) {
+      flex-direction: column;
+    }
+
+    .servise_reverse & {
+      @media (min-width: $mobile) {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+
+  &__content {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    @include adaptiveValue("gap", 25, 15);
+  }
+
+  &__title {
+    .servise_reverse & {
+      color: #fff;
+    }
+  }
+
+  &__text {
+    .servise_reverse & {
+      color: #c7cacb;
+    }
+  }
+
+  &__button {
+    @media (max-width: $mobile) {
+      width: 100%;
+    }
+  }
+
+  &__image-ibg {
+    flex: 0 0 percent(555, 1180);
+    border-radius: toRem(15);
+    overflow: hidden;
+    height: fit-content;
+    padding-bottom: percent(483, 1180);
+
+    @media (max-width: $mobile) {
+      padding-bottom: percent(300, 345);
+    }
+  }
+}
