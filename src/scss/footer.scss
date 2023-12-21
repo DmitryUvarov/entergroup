@@ -1,3 +1,90 @@
 //====================================================================================================
 
+.footer {
+  @include adaptiveValue("padding-top", 40, 35);
+  @include adaptiveValue("padding-bottom", 66, 35);
+  &__container {
+  }
+
+  &__body {
+    display: flex;
+    @include adaptiveValue("column-gap", 85, 30, 0, 1210, 991);
+    @include adaptiveValue("row-gap", 35, 10);
+
+    @media (max-width: $tablet) {
+      flex-direction: column;
+    }
+  }
+
+  &__logo {
+    @include adaptiveValue("max-width", 115, 90, 0, 767, 375);
+    transition: all 0.3s ease 0s;
+
+    @media (max-width: $tablet) {
+      margin-bottom: toRem(10);
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  &__list {
+  }
+
+  &__item {
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 17, 7);
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    padding: toRem(4) 0;
+    position: relative;
+    color: #7e7e7e;
+    font-size: toRem(19);
+    line-height: 136.8%; /* 26/19 */
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: toRem(1);
+      right: 0;
+      bottom: 0;
+      background-color: #57899f;
+      transition: all 0.3s ease-in-out 0s;
+      left: auto;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        &::before {
+          width: 100%;
+          left: 0;
+          right: auto;
+        }
+      }
+    }
+  }
+
+  &__contacts {
+    display: grid;
+    gap: toRem(17);
+
+    height: fit-content;
+
+    @media (min-width: $tablet) {
+      margin-left: auto;
+    }
+  }
+}
+
 //====================================================================================================
