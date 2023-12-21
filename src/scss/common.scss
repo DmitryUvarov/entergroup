@@ -46,7 +46,7 @@
 
 .title {
   color: #000;
-  @include adaptiveValue("font-size", 50, 35);
+  @include adaptiveValue("font-size", 50, 25);
   line-height: 100%; /* 100% */
   text-transform: uppercase;
 

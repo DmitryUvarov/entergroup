@@ -79,3 +79,43 @@
 }
 
 //====================================================================================================
+
+.about {
+  @include adaptiveValue("padding-top", 85, 35);
+  &__container {
+  }
+
+  &__title {
+    text-align: center;
+    @include adaptiveValue("font-size", 50, 23);
+
+    @media (max-width: $mobile) {
+      line-height: 110%;
+    }
+
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 30, 20);
+    }
+  }
+
+  &__text {
+    text-align: center;
+
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 50, 30);
+    }
+  }
+
+  &__image-ibg {
+    border-radius: toRem(195) toRem(195) 0 0;
+    overflow: hidden;
+    padding-bottom: percent(370, 1180);
+
+    @media (max-width: $mobile) {
+      margin: 0 toRem(-15);
+      border-radius: toRem(70) toRem(70) 0 0;
+    }
+  }
+}
+
+//========================================================================================================================================================
