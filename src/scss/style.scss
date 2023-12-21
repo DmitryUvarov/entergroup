@@ -153,7 +153,12 @@ body {
 
 // Підключення стилів окремих сторінок
 @import "home";
+@import "blog";
 
 .page {
   padding-top: var(--header-height);
+
+  &__blog {
+    background-color: #57899f;
+  }
 }

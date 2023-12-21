@@ -15,7 +15,7 @@
 
   border-radius: toRem(30);
   border: toRem(1) solid #fff;
-  height: toRem(55);
+  @include adaptiveValue("height", 55, 50);
   min-width: toRem(238);
   transition: all 0.3s ease 0s;
 
