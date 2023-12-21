@@ -8,7 +8,7 @@
 // При необхідності підключаємо додаткові модулі слайдера, вказуючи їх у {} через кому
 // Приклад: { Navigation, Autoplay }
 import Swiper from 'swiper';
-import { Navigation } from 'swiper/modules';
+import { Autoplay } from 'swiper/modules';
 /*
 Основні модулі слайдера:
 Navigation, Pagination, Autoplay,
@@ -28,82 +28,128 @@ import "../../scss/base/swiper.scss";
 function initSliders() {
 	// Список слайдерів
 	// Перевіряємо, чи є слайдер на сторінці
-	if (document.querySelector('.1234342')) {
-			new Swiper('.12324234', {
-			modules: [Navigation],
-			observer: true,
-			observeParents: true,
-			slidesPerView: 1,
-			spaceBetween: 0,
-			//autoHeight: true,
-			speed: 800,
+	// if (document.querySelector('.df1234342')) {
+	// 		new Swiper('.df12324234', {
+	// 		modules: [Navigation],
+	// 		observer: true,
+	// 		observeParents: true,
+	// 		slidesPerView: 1,
+	// 		spaceBetween: 0,
+	// 		//autoHeight: true,
+	// 		speed: 800,
 
-			// lazyPreloaderClass: 'preloader',
+	// 		// lazyPreloaderClass: 'preloader',
 
-			//touchRatio: 0,
-			//simulateTouch: false,
-			//loop: true,
-			//preloadImages: false,
-			//lazy: true,
+	// 		//touchRatio: 0,
+	// 		//simulateTouch: false,
+	// 		//loop: true,
+	// 		//preloadImages: false,
+	// 		//lazy: true,
 
-			/*
-			// Ефекти
-			effect: 'fade',
-			autoplay: {
-				delay: 3000,
-				disableOnInteraction: false,
-			},
-			*/
+	// 		/*
+	// 		// Ефекти
+	// 		effect: 'fade',
+	// 		autoplay: {
+	// 			delay: 3000,
+	// 			disableOnInteraction: false,
+	// 		},
+	// 		*/
 
-			// Пагінація
-			/*
-			pagination: {
-				el: '.swiper-pagination',
-				clickable: true,
-			},
-			*/
+	// 		// Пагінація
+	// 		/*
+	// 		pagination: {
+	// 			el: '.swiper-pagination',
+	// 			clickable: true,
+	// 		},
+	// 		*/
 
-			// Скроллбар
-			/*
-			scrollbar: {
-				el: '.swiper-scrollbar',
-				draggable: true,
-			},
-			*/
+	// 		// Скроллбар
+	// 		/*
+	// 		scrollbar: {
+	// 			el: '.swiper-scrollbar',
+	// 			draggable: true,
+	// 		},
+	// 		*/
 
-			// Кнопки "вліво/вправо"
-			navigation: {
-				prevEl: '.swiper-button-prev',
-				nextEl: '.swiper-button-next',
-			},
-			/*
-			// Брейкпоінти
-			breakpoints: {
-				640: {
-					slidesPerView: 1,
-					spaceBetween: 0,
-					autoHeight: true,
-				},
-				768: {
-					slidesPerView: 2,
-					spaceBetween: 20,
-				},
-				992: {
-					slidesPerView: 3,
-					spaceBetween: 20,
-				},
-				1268: {
-					slidesPerView: 4,
-					spaceBetween: 30,
-				},
-			},
-			*/
-			// Події
-			on: {
+	// 		// Кнопки "вліво/вправо"
+	// 		navigation: {
+	// 			prevEl: '.swiper-button-prev',
+	// 			nextEl: '.swiper-button-next',
+	// 		},
+	// 		/*
+	// 		// Брейкпоінти
+	// 		breakpoints: {
+	// 			640: {
+	// 				slidesPerView: 1,
+	// 				spaceBetween: 0,
+	// 				autoHeight: true,
+	// 			},
+	// 			768: {
+	// 				slidesPerView: 2,
+	// 				spaceBetween: 20,
+	// 			},
+	// 			992: {
+	// 				slidesPerView: 3,
+	// 				spaceBetween: 20,
+	// 			},
+	// 			1268: {
+	// 				slidesPerView: 4,
+	// 				spaceBetween: 30,
+	// 			},
+	// 		},
+	// 		*/
+	// 		// Події
+	// 		on: {
 
-			}
-		});
-	}
+	// 		}
+	// 	});
+	// }
+
+	for (const mobileSlider of document.querySelectorAll('.partners__items')) {
+        if (mobileSlider) {
+            (function () {
+                "use strict";
+
+                const breakpoint = window.matchMedia("(min-width:768px)");
+                let slider;
+
+                const enableSwiper = function () {
+                    slider = new Swiper(mobileSlider, {
+                        modules: [Autoplay],
+						observer: true,
+						observeParents: true,
+						slidesPerView: 3.5,
+						spaceBetween: 30,
+
+						speed: 1500,
+						loop: true,
+						loopAdditionalSlides: 5,
+						allowTouchMove: false,
+
+						autoplay: {
+							delay: 0,
+							disableOnInteraction: false,
+						},
+
+                    });
+                };
+
+                const breakpointChecker = function () {
+                    if (breakpoint.matches === true) {
+                        if (slider !== undefined) slider.destroy(true, true);
+
+                        return;
+                    } else if (breakpoint.matches === false) {
+                        return enableSwiper();
+                    }
+                };
+
+                breakpoint.addListener(breakpointChecker);
+                breakpointChecker();
+            })();
+        }
+
+    }
 }
 // Скролл на базі слайдера (за класом swiper scroll для оболонки слайдера)
 function initSlidersScroll() {
