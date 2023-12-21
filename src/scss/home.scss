@@ -388,3 +388,81 @@
     line-height: 126.3%; /* 24/19 */
   }
 }
+
+//========================================================================================================================================================
+
+.bottom {
+  position: relative;
+  @include adaptiveValue("padding-top", 85, 35);
+  @include adaptiveValue("padding-bottom", 80, 35);
+  &__container {
+  }
+
+  &__title {
+    text-align: center;
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 55, 30);
+    }
+  }
+
+  &__form {
+    @media (min-width: em(660)) {
+      max-width: toRem(450);
+      margin: 0 auto;
+    }
+  }
+
+  &__img-ibg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+}
+
+.form-bottom {
+  border-radius: toRem(20);
+  background: rgba(30, 30, 30, 0.16);
+  padding: toRem(38) toRem(35) toRem(50);
+
+  @media (max-width: $mobile) {
+    padding: toRem(35) toRem(20) toRem(40);
+  }
+
+  &__title {
+    color: #fff;
+    @include adaptiveValue("font-size", 34, 28);
+    line-height: 100%; /* 97.059% */
+    text-transform: uppercase;
+    text-align: center;
+
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 30, 20);
+    }
+  }
+
+  &__label {
+    display: block;
+    span {
+      display: block;
+      color: #fff;
+      font-size: toRem(19);
+      line-height: 126.3%; /* 24/19 */
+      @include adaptiveValue("margin-bottom", 18, 10);
+    }
+
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 18, 15);
+    }
+  }
+
+  &__input {
+  }
+
+  &__button {
+    width: 100%;
+    @include adaptiveValue("margin-top", 24, 20);
+  }
+}
