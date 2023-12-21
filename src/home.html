@@ -111,7 +111,7 @@
 
 								<p>С помощью нашей услуги СММ вы сможете успешно преодолеть конкуренцию и установить прочные связи с вашей целевой аудиторией.</p>
 							</div>
-							<button class="servise__button button button_green">Обсудить проект</button>
+							<button class="servise__button button button_green" data-popup="#contact" data-popup-title="СММ">Обсудить проект</button>
 						</div>
 						<div class="servise__image-ibg"><img src="@img/servise/01.jpg" alt=""></div>
 					</div>
@@ -130,7 +130,7 @@
 
 								<p>Мы также предлагаем услуги организации интервью, чтобы помочь вам получить максимальное внимание СМИ и представить вашу компанию или продукт в наилучшем свете.</p>
 							</div>
-							<button class="servise__button button">Обсудить проект</button>
+							<button class="servise__button button" data-popup="#contact" data-popup-title="СМИ">Обсудить проект</button>
 						</div>
 						<div class="servise__image-ibg"><img src="@img/servise/02.jpg" alt=""></div>
 					</div>
@@ -150,7 +150,7 @@
 									Наша команда занимается выбором места проведения, оформлением, разработкой программы, подбором развлечений и размещением гостей.
 								</p>
 							</div>
-							<button class="servise__button button button_green">Обсудить проект</button>
+							<button class="servise__button button button_green" data-popup="#contact" data-popup-title="ОРГАНИЗАЦИЯ МЕРОПРИЯТИЙ">Обсудить проект</button>
 						</div>
 						<div class="servise__image-ibg"><img src="@img/servise/03.jpg" alt=""></div>
 					</div>
@@ -167,7 +167,7 @@
 
 								<p>Мы предлагаем профессиональное создание и размещение наружной рекламы, включая билборды, рекламные щиты, светодиодные экраны, рекламные конструкции на зданиях и автомобилях. Наша команда экспертов в области наружной рекламы поможет вам выбрать наиболее подходящие места для размещения, учитывая вашу целевую аудиторию и бюджет. Мы также предоставляем услуги по мониторингу и анализу эффективности рекламы, чтобы вы могли измерить результаты и внести корректировки в вашу стратегию.</p>
 							</div>
-							<button class="servise__button button">Обсудить проект</button>
+							<button class="servise__button button" data-popup="#contact" data-popup-title="НАРУЖНАЯ РЕКЛАМА">Обсудить проект</button>
 						</div>
 						<div class="servise__image-ibg"><img src="@img/servise/04.jpg" alt=""></div>
 					</div>
@@ -303,16 +303,10 @@
 				<div class="bottom__img-ibg"><img src="@img/bottom/01.jpg" alt=""></div>
 			</section>
 
-			<!-- <section class="test">
-				<div class="test__container">
-					<div class="test__body">
-
-					</div>
-				</div>
-			</section> -->
 
 		</main>
 		@@include('html/_footer.htm',{})
+		@@include('html/_popup.htm',{})
 	</div>
 	@@include('html/_js.htm',{})
 </body>

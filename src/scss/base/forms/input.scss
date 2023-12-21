@@ -9,11 +9,25 @@ textarea {
   appearance: none;
 }
 .input {
-  border-radius: 0 !important;
+  @include adaptiveValue("height", 64, 55);
   width: 100%;
   display: block;
-  padding: 0px 20px;
-  border: 1px solid #eee;
+  padding: 0px toRem(33);
+  border-radius: toRem(40);
+  background: #eee;
+  border: toRem(1) solid transparent;
+
+  color: #000;
+  font-size: toRem(18);
+  line-height: 111.1%; /* 20/18 */
+  &:focus {
+    outline: none;
+    border-color: #000;
+  }
+  &::placeholder {
+    color: #7e7e7e;
+  }
+
   &._form-focus {
   }
   &._form-error {

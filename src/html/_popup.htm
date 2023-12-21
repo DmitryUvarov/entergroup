@@ -1,10 +1,18 @@
-<div id="popup" aria-hidden="true" class="popup">
+<div id="contact" aria-hidden="true" class="popup">
 	<div class="popup__wrapper">
 		<div class="popup__content">
-			<button data-close type="button" class="popup__close">Закрити</button>
-			<div class="popup__text">
-				Text
+			<button data-close type="button" class="popup__close _icon-close"></button>
+
+			<div class="popup__title">ПОДАТЬ ЗАЯВКУ</div>
+			<div class="popup__text text">Введите свой номер телефона и имя, мы перезвоним и обсудим Вашу ситуацию и сообщим предварительное решение</div>
+
+			<div class="popup__form">
+				<input autocomplete="off" type="text" name="form[]" placeholder="hide" class="popup__input input" data-servise>
+				<input autocomplete="off" type="text" name="form[]" placeholder="Ваше имя" class="popup__input input">
+				<input autocomplete="off" type="text" name="form[]" placeholder="Ваш телефон" class="popup__input input">
+				<button type="submit" class="popup__button button button_green">Отправить</button>
 			</div>
+
 		</div>
 	</div>
 </div>
