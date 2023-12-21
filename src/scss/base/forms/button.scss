@@ -2,13 +2,51 @@
 // Сніппет (HTML): btn
 
 .button {
-	display: inline-flex;
-	padding: 0px 0px;
-	@media (any-hover: hover) {
-		&:hover {
-		}
-	}
-	&--fw {
-		width: 100%;
-	}
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px toRem(10);
+
+  color: #fff;
+  font-family: "Futura PT";
+  font-size: toRem(19);
+  font-weight: 500;
+  line-height: 126.3%; /* 24/19 */
+
+  border-radius: toRem(30);
+  border: toRem(1) solid #fff;
+  height: toRem(55);
+  min-width: toRem(238);
+  transition: all 0.3s ease 0s;
+
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: #fff;
+      color: #57899f;
+    }
+  }
+  &--fw {
+    width: 100%;
+  }
+
+  &_yellow {
+    color: #966300;
+    border-color: #966300;
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: #966300;
+        color: #fff;
+      }
+    }
+  }
+  &_green {
+    color: #57899f;
+    border-color: #57899f;
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: #57899f;
+        color: #fff;
+      }
+    }
+  }
 }
